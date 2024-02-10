@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Close, GridOutline } from "react-ionicons";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleDropDown, setToggleDropDown] = useState<boolean>(false);
 
-  let menuRef = useRef<HTMLDivElement | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setToggleDropDown(false);
       }
